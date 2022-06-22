@@ -61,10 +61,23 @@ body {
     width: 25%;
     float: left;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100%;
     color: #fff;
+    padding: 0 15px 0 15px;
+    box-sizing: border-box;
+}
+
+.slide .arrow.left {
+    float: left;
+}
+
+.slide .arrow.right {
+    float: right;
+}
+
+.slide .slide-content {
+    margin: 0 auto;
 }
 
 #slides .slide_1 {

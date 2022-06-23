@@ -117,31 +117,6 @@ body {
     background: #444;
 }
 
-.arrow {
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 13px;
-}
-
-@media screen and (max-width: 900px) {
-    #slides {
-        margin: 0 auto;
-    }
-
-    .arrow {
-        border-width: 0 2px 2px 0;
-        padding: 19px;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .arrow {
-        border-width: 0 2px 2px 0;
-        padding: 30px;
-    }
-}
-
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
@@ -160,4 +135,70 @@ body {
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.arrow {
+    display: inline-block;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    padding: 20px;
+}
+
+.arrow.right {
+    margin-right: 8px;
+}
+
+.arrow.left {
+    margin-left: 8px;
+}
+
+@media screen and (min-width: 600px) {
+    #slides {
+        margin: 0 auto;
+    }
+
+    .arrow {
+        border-width: 0 2px 2px 0;
+        padding: 24px;
+    }
+
+    .arrow.right {
+        margin-right: 30px;
+    }
+
+    .arrow.left {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .arrow {
+        border-width: 0 2px 2px 0;
+        padding: 28px;
+        margin: 10%;
+    }
+
+    .arrow.right {
+        margin-right: 10%;
+    }
+
+    .arrow.left {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .arrow {
+        border-width: 0 2px 2px 0;
+        padding: 28px;
+        margin: 10%;
+    }
+
+    .arrow.right {
+        margin-right: 18%;
+    }
+
+    .arrow.left {
+        margin-left: 18%;
+    }
 }

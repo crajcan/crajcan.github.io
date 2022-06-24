@@ -18,7 +18,6 @@ body {
 
 #slider label {
     cursor: pointer;
-    text-decoration: none;
 }
 
 #slides {
@@ -29,8 +28,8 @@ body {
 }
 
 #overflow {
-    width: 100%;
     overflow: hidden;
+    width: 100%;
     height: 100%;
 }
 
@@ -96,43 +95,33 @@ body {
     background: #00A8E8;
 }
 
-#bullets {
-    margin: 15px 0 0;
-    text-align: center;
-}
-
-#bullets label {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: #ccc;
-    margin: 0 10px;
-}
-
+/*
+Can use this strat for 'site map' thing to indicate
+current page if we use ids to mark the label 
+/*
 #slide1:checked~#bullets label:nth-child(1),
 #slide2:checked~#bullets label:nth-child(2),
 #slide3:checked~#bullets label:nth-child(3),
 #slide4:checked~#bullets label:nth-child(4) {
     background: #444;
-}
+} */
 
-.right {
+.arrow-right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
 
-.left {
+.arrow-left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
-.up {
+.arrow-up {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
 }
 
-.down {
+.arrow-down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
@@ -144,11 +133,11 @@ body {
     padding: 20px;
 }
 
-.arrow.right {
+.arrow-right {
     margin-right: 8px;
 }
 
-.arrow.left {
+.arrow-left {
     margin-left: 8px;
 }
 
@@ -162,11 +151,11 @@ body {
         padding: 24px;
     }
 
-    .arrow.right {
+    .arrow-right {
         margin-right: 30px;
     }
 
-    .arrow.left {
+    .arrow-left {
         margin-left: 30px;
     }
 }
@@ -178,11 +167,11 @@ body {
         margin: 10%;
     }
 
-    .arrow.right {
+    .arrow-right {
         margin-right: 10%;
     }
 
-    .arrow.left {
+    .arrow-left {
         margin-left: 10%;
     }
 }
@@ -194,11 +183,11 @@ body {
         margin: 10%;
     }
 
-    .arrow.right {
+    .arrow-right {
         margin-right: 18%;
     }
 
-    .arrow.left {
+    .arrow-left {
         margin-left: 18%;
     }
 }

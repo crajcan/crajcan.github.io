@@ -60,6 +60,10 @@ body {
     height: 100%;
 }
 
+.row {
+    height: 100%;
+}
+
 #slides .slide {
     width: 25%;
     float: left;
@@ -97,6 +101,22 @@ body {
 
 #slides .bikes {
     background: #00A8E8;
+}
+
+#slides .new-slide-1 {
+    background: red;
+}
+
+#slides .new-slide-2 {
+    background: red;
+}
+
+#slides .new-slide-3 {
+    background: red;
+}
+
+#slides .new-slide-4 {
+    background: red;
 }
 
 /*

@@ -1,0 +1,14 @@
+{
+  "name": "personal_site",
+  "collaborators": [
+    "Carson Rajcan"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "personal_site_bg.wasm",
+    "personal_site.js",
+    "personal_site.d.ts"
+  ],
+  "browser": "personal_site.js",
+  "types": "personal_site.d.ts"
+}

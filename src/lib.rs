@@ -1,12 +1,14 @@
-use derive_more::{Display, Error};
-use std::error::Error;
-
 use wasm_bindgen::prelude::*;
 use web_sys::{Document, Element, Window};
+
+mod app;
+use app::App;
 
 // Called when the wasm module is instantiated
 #[wasm_bindgen(start)]
 pub fn main() -> Result<(), JsValue> {
+    log("I can log from Rust too!");
+
     // Use `web_sys`'s global `window` function to get a handle on the global
     // window object.
     let window = web_sys::window().expect("no global `window` exists");
@@ -18,41 +20,8 @@ pub fn main() -> Result<(), JsValue> {
     let app = App::new();
 
     shell.append_child(&app.render(dom))?;
-    log("I can log from Rust too!");
 
     Ok(())
-}
-
-struct App {
-    slider: Vec<Vec<i32>>,
-}
-
-impl App {
-    fn new() -> App {
-        App {
-            slider: vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]],
-        }
-    }
-
-    fn render(&self, dom: Document) -> Element {
-        let app = dom.create_element("div").unwrap();
-        app.set_inner_html("Hello from declarative App!");
-
-        app
-    }
-}
-
-#[derive(Debug, Display, Error)]
-struct myError {
-    message: String,
-}
-
-impl From<JsValue> for myError {
-    fn from(error: JsValue) -> Self {
-        myError {
-            message: format!("{:?}", error),
-        }
-    }
 }
 
 #[wasm_bindgen]

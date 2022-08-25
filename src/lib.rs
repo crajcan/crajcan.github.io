@@ -6,13 +6,15 @@ pub fn main() -> Result<(), JsValue> {
     // Use `web_sys`'s global `window` function to get a handle on the global
     // window object.
     let window = web_sys::window().expect("no global `window` exists");
-    let document = window.document().expect("should have a document on window");
-    let home_slide_content = document.get_element_by_id("home-slide-content").expect("should have home slide content");
+    let dom = window.document().expect("should have a document on window");
+    let app = dom
+        .get_element_by_id("slider")
+        .expect("should have an app!");
 
-    let val = document.create_element("p")?;
-    val.set_inner_html("Hello from Rust!");
+    let val = dom.create_element("div")?;
+    val.set_inner_html("Hello from div app!");
 
-    home_slide_content.append_child(&val)?;
+    app.append_child(&val)?;
 
     Ok(())
 }

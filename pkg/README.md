@@ -1,4 +1,4 @@
-## Build command
+## Build command (If changing Rust files)
 
 ```
 wasm-pack build --target no-modules

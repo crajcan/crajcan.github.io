@@ -4,10 +4,13 @@ use web_sys::{Document, Element, Window};
 mod app;
 use app::App;
 
+mod utils;
+use crate::utils::logger::log;
+
 // Called when the wasm module is instantiated
 #[wasm_bindgen(start)]
 pub fn main() -> Result<(), JsValue> {
-    log("I can log from Rust too!");
+    log("I can log from Rust too! using my modular logger");
 
     // Use `web_sys`'s global `window` function to get a handle on the global
     // window object.
@@ -27,22 +30,4 @@ pub fn main() -> Result<(), JsValue> {
 #[wasm_bindgen]
 pub fn add(a: u32, b: u32) -> u32 {
     a + b
-}
-
-#[wasm_bindgen]
-extern "C" {
-    // Use `js_namespace` here to bind `console.log(..)` instead of just
-    // `log(..)`
-    #[wasm_bindgen(js_namespace = console)]
-    fn log(s: &str);
-
-    // The `console.log` is quite polymorphic, so we can bind it with multiple
-    // signatures. Note that we need to use `js_name` to ensure we always call
-    // `log` in JS.
-    #[wasm_bindgen(js_namespace = console, js_name = log)]
-    fn log_u32(a: u32);
-
-    // Multiple arguments too!
-    #[wasm_bindgen(js_namespace = console, js_name = log)]
-    fn log_many(a: &str, b: &str);
 }

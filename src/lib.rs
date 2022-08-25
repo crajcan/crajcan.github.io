@@ -17,8 +17,8 @@ pub fn main() -> Result<(), JsValue> {
     let window = web_sys::window().expect("no global `window` exists");
     let dom = window.document().expect("should have a document on window");
     let shell = dom
-        .get_element_by_id("slider")
-        .expect("should have an app!");
+        .get_element_by_id("shell")
+        .expect("should have a shell to hold the app");
 
     let app = App::new();
 

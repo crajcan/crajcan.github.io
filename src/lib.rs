@@ -1,8 +1,9 @@
 use wasm_bindgen::prelude::*;
 use web_sys::{Document, Element, Window};
 
-mod app;
-use app::App;
+//why?
+pub(crate) mod components;
+use components::app::App;
 
 mod utils;
 use crate::utils::logger::log;
@@ -16,7 +17,9 @@ pub fn main() -> Result<(), JsValue> {
     // window object.
     let window = web_sys::window().expect("no global `window` exists");
     let dom = window.document().expect("should have a document on window");
-    let shell = dom
+
+    // why is rust-analyzer not giving me types?
+    let shell: Element = dom
         .get_element_by_id("shell")
         .expect("should have a shell to hold the app");
 

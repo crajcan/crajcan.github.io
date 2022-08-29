@@ -1,16 +1,12 @@
-use web_sys::{Document, Element, Window};
+use web_sys::{Document, Element};
 
 use crate::components::grid::Grid;
 
-pub struct App {
-    slider: Vec<Vec<i32>>,
-}
+pub struct App;
 
 impl App {
     pub fn new() -> App {
-        App {
-            slider: vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]],
-        }
+        App {}
     }
 
     pub fn init(&self, dom: Document) {
@@ -18,7 +14,7 @@ impl App {
             .get_element_by_id("shell")
             .expect("should have a shell to hold the app");
 
-        shell.append_child(&self.render(dom));
+        shell.append_child(&self.render(dom)).unwrap();
     }
 
     pub fn render(&self, dom: Document) -> Element {

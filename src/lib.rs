@@ -25,7 +25,7 @@ pub fn main() -> Result<(), JsValue> {
 
     let app = App::new();
 
-    shell.append_child(&app.render(dom))?;
+    app.init(dom);
 
     Ok(())
 }

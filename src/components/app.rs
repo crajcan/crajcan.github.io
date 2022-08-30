@@ -1,15 +1,9 @@
 use web_sys::{Document, Element};
 
-use crate::components::grid::Grid;
+use crate::element_helper::{insert_html, set_input_value};
+use crate::todo::Todo;
 
 pub struct App;
-
-// needs its own file
-pub struct Todo {
-    title: String,
-    completed: bool,
-    id: usize,
-}
 
 impl App {
     pub fn new() -> App {
@@ -20,22 +14,6 @@ impl App {
         self.render(dom);
     }
 
-    // export const insertHTML = (el, markup) => {
-    //     el.insertAdjacentHTML('afterbegin', markup);
-    // }
-
-    // this needs to move to a helper
-    pub fn insert_html(element: &Element, markup: &str) {
-        element.insert_adjacent_html("afterbegin", markup).unwrap();
-    }
-
-    // put this in the same helper as insert_html for now 
-    pub fn set_value(element: &Element, value: &str) {
-        if let Some(el) = wasm_bindgen::JsCast::dyn_ref::<web_sys::HtmlInputElement>(element) {
-            el.set_value(&value);
-        }
-    }
-
     // this should be todo.render() or something
     pub fn create_todo_item(todo: Todo, dom: Document) -> Element {
         let li = dom.create_element("li").unwrap();
@@ -44,7 +22,7 @@ impl App {
         if todo.completed {
             li.set_attribute("class", "completed").unwrap();
         }
-        Self::insert_html(
+        insert_html(
             &li,
             r#"<div class="view">
          		<input data-todo="toggle" class="toggle" type="checkbox" "checked">
@@ -61,7 +39,7 @@ impl App {
         label.set_text_content(Some(&todo.title));
 
         let input = li.query_selector(r#"[data-todo="edit"]"#).unwrap().unwrap();
-        Self::set_value(&input, &todo.title);
+        set_input_value(&input, &todo.title);
 
         li
     }

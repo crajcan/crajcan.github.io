@@ -4,8 +4,11 @@ use wasm_bindgen::prelude::*;
 pub(crate) mod components;
 use components::app::App;
 
+mod todo;
+
 mod utils;
-use crate::utils::logger::log;
+use crate::utils::{logger::log};
+use crate::utils::element_helper;
 
 // Called when the wasm module is instantiated
 #[wasm_bindgen(start)]

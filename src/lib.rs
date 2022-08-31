@@ -7,8 +7,8 @@ use components::app::App;
 mod todo;
 
 mod utils;
-use crate::utils::{logger::log};
 use crate::utils::element_helper;
+use crate::utils::logger::log;
 
 // Called when the wasm module is instantiated
 #[wasm_bindgen(start)]
@@ -20,7 +20,7 @@ pub fn main() -> Result<(), JsValue> {
     let window = web_sys::window().expect("no global `window` exists");
     let dom = window.document().expect("should have a document on window");
 
-    let app = App::new();
+    let app = App::new(&dom);
 
     app.init(dom);
 

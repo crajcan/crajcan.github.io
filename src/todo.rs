@@ -7,6 +7,9 @@ pub struct Todo {
     pub id: usize,
 }
 
+// We need to decide if we want to separate the data from the functionality here. Pure components 
+// might be a better approach, we would leave the struct def as our Todo 'model' and move this render
+// implementation into src/components
 impl Todo {
     pub fn render(&self, dom: Document) -> Element {
         let li = dom.create_element("li").unwrap();

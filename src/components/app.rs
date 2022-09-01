@@ -1,20 +1,9 @@
-use wasm_bindgen::{prelude::*, JsCast};
-use web_sys::{Document, Element, EventTarget};
+use web_sys::{Document, Element};
 
-use crate::{todo::Todo, utils::logger::log};
+use crate::{event_helper::*, todo::Todo, handlers::*};
 
 pub struct App {
     pub input: Element, //owned for now?...
-}
-
-pub fn bind_add_todo<T>(e: &Element, handler: T)
-where
-    T: 'static + FnMut(web_sys::Event),
-{
-    let cb = Closure::new::<T>(handler);
-    e.add_event_listener_with_callback("keyup", cb.as_ref().unchecked_ref())
-        .unwrap();
-    cb.forget();
 }
 
 impl App {
@@ -24,28 +13,12 @@ impl App {
         App { input }
     }
 
-    const ENTER_KEY_CODE: u32 = 13;
+    pub fn bind_add_todo_handler(&self, dom: &Document) {
+        add_event_listener(&self.input, "keyup", add_todo_handler())
+    }
 
     pub fn init(&self, dom: Document) {
-        let cb = move |event: web_sys::Event| {
-            if let Some(key) = wasm_bindgen::JsCast::dyn_ref::<web_sys::KeyboardEvent>(&event) {
-                if key.key_code() == Self::ENTER_KEY_CODE {
-                    if let Some(target) = event.target() {
-                        if let Some(input_el) =
-                            wasm_bindgen::JsCast::dyn_ref::<web_sys::HtmlInputElement>(&target)
-                        {
-                            if !input_el.value().is_empty() {
-                                log("Todo input is not empty");
-                                // let todo = Todo::new(value);
-                                // todo.render(&dom);
-                                // input_el.set_value("");
-                            }
-                        }
-                    }
-                }
-            }
-        };
-        bind_add_todo(&self.input, cb);
+        self.bind_add_todo_handler(&dom);
 
         self.render(dom);
     }

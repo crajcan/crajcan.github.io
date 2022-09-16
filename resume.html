@@ -8,12 +8,57 @@
     <meta name="robots" content="noindex">
     <style>
         body {
-            margin: 0 0 60px 0;
+            margin: 0;
+            padding-bottom: 40px;
+        }
+
+        h3 {
+            font-size: 1.1em;
+            margin: 15px 0;
+        }
+
+        .job-description {
+            padding-left: 20px;
+        }
+
+        .job-description li {
+            margin: 1px 0;
+            list-style-type: disc;
+        }
+
+        .name {
+            font-size: 28px;
+        }
+
+        .contact-info {
+            font-size: 0.8em;
+            margin-top: 22px;
+        }
+
+
+        @media screen and (min-width: 400px) {
+            .contact-info {
+                font-size: 1em;
+                margin-top: 20px;
+            }
         }
 
         @media screen and (min-width: 668px) {
             body {
                 margin: 0px auto 60px auto;
+                padding: 0 40px 40px 40px;
+            }
+
+            .job-description {
+                padding-left: 40px;
+            }
+
+            .job-description li {
+                margin: 0.5px 0;
+            }
+
+            .name {
+                font-size: 32px;
             }
         }
     </style>
@@ -22,21 +67,25 @@
 <body class="bdy" style="
            background-color: white;
            max-width: 800px;
-           min-width: 668px;
-           padding: 0 40px 40px 40px;
-           margin: 0px auto 60px auto;
            ">
-    <div id="header" style="display: block; height: 80px; border-bottom: 1px solid black; padding: 50px 0 20px 0;">
-        <h1 style="float: left; margin: 40px 0 0 0;">Carson Rajcan</h1>
+    <div id="header"
+        style="
+            display: block;
+            height: 80px;
+            border-bottom: 1px solid black;
+            padding: 50px 0 20px 0;
+            margin: 0 30px 0 30px;
+            ">
+        <h1 class="name" style="float: left; margin: 40px 0 0 0;">Carson Rajcan</h1>
         <div style="float: right; margin-top: 20px;">
-            <ul style="list-style-type: none;">
+            <ul class="contact-info" style="list-style-type: none; padding: 0;">
                 <li>carajcan@gmail.com</li>
                 <li>(832) 993-5718</li>
             </ul>
         </div>
     </div>
     <div id="main" style="margin: 0 30px 0 30px;">
-        <h3>Career Retrospective</h3>
+        <h2>Career Retrospective</h2>
         <p style=" display: none;">
             What I'm trying to say in this section:
 
@@ -58,8 +107,8 @@
             in
             minimizing feedback loops while desigining workflows to tackle daily development tasks.
         </p>
-        <h3>Timeline</h3>
-        <ul style="list-style-type: none;">
+        <h2>Timeline</h2>
+        <ul style="list-style-type: none; padding: 0;">
             <li>
                 <h3>Pre 2017, Carnegie Mellon University</h3>
                 <p>Studied Logic & Computation in a Computer Science department that emphasized proof of safety,
@@ -68,7 +117,7 @@
             </li>
             <li>
                 <h3>Mid 2017 - Mid 2019, Enova International - Software Engineer</h3>
-                <ul>
+                <ul class="job-description">
                     <li>Learned how to affect change within a corporate software organization.</li>
                     <li>Beat truth out of a large legacy Rails system</li>
                     <li>Led learning sessions on how to fix flapping tests in an effort to improve CI</li>
@@ -77,7 +126,7 @@
             </li>
             <li>
                 <h3>Mid 2019 - Late 2021, Beckway Group LLC - Senior Software Engineer</h3>
-                <ul>
+                <ul class="job-description">
                     <li>Had sole responsibility developing a Rails API for a greenfield project management app</li>
                     <li>Wrote over 1000 tests while using TDD </li>
                     <li>Implemented Excel Import/Export for project management tasks</li>
@@ -91,7 +140,7 @@
             </li>
             <li>
                 <h3>Late 2021 - Present</h3>
-                <ul>
+                <ul class="job-description">
                     <li>Enjoyed exciting life events.</li>
                     <li>Learned Rust to take advantage of its safety and reliability guarantees and focus on domain
                         logic.</li>
@@ -99,13 +148,14 @@
                         Built a few side projects with Rust.
                     </li>
                     <li>
-                        Contributed the QueryBuilder to SQLx, my first production Rust commit.
+                        Contributed the QueryBuilder to <a href="https://github.com/launchbadge/sqlx">SQLx</a>, my first
+                        production Rust commit.
                     </li>
                 </ul>
             </li>
             <li>
                 <h3>Future</h3>
-                <ul>
+                <ul class="job-description">
                     <li>Get a job at a company that does no harm, where the software is the product.</li>
                     <li>Become an expert on Rust and surrounding tooling.</li>
                     <li>Become uniquely skilled at building systems that are not just reliable, but modifiable as well.
@@ -114,7 +164,7 @@
                 </ul>
             </li>
         </ul>
-        <h3>References</h3>
+        <h2>References</h2>
         <p>Available upon request.</p>
     </div>
 </body>

@@ -68,8 +68,7 @@
            background-color: white;
            max-width: 800px;
            ">
-    <div id="header"
-        style="
+    <div id="header" style="
             display: block;
             height: 80px;
             border-bottom: 1px solid black;
@@ -85,19 +84,18 @@
         </div>
     </div>
     <div id="main" style="margin: 0 30px 0 30px;">
-        <h2>Career Retrospective</h2>
+        <h2 style="display: none;">Career Retrospective</h2>
         <p style=" display: none;">
             What I'm trying to say in this section:
 
             What I've had to deal with: uncertainty.
 
             What I've gained dealing with that: An ability to creatively problem solve by developing workflows with
-            short
-            feedback loops in various problem domains.
+            short feedback loops in various problem domains.
 
             What I hope to do/gain next: Experience and expertise building reliable and modifiable systems.
         </p>
-        <p>
+        <p style=" display: none;">
             I am experienced in developing in the presense of a large degree of uncertainty, working on
             systems
             that are highly resistent to being understood. At times I have even had to treat systems empirically to gain
@@ -107,11 +105,12 @@
             in
             minimizing feedback loops while desigining workflows to tackle daily development tasks.
         </p>
-        <h2>Timeline</h2>
+        <h2 style="display: none;">Timeline</h2>
         <ul style="list-style-type: none; padding: 0;">
             <li>
                 <h3>Pre 2017, Carnegie Mellon University</h3>
-                <p>Studied Logic & Computation in a Computer Science department that emphasized proof of safety,
+                <p style="padding-left: 20px;">Studied Logic & Computation in a Computer Science department that
+                    emphasized proof of safety,
                     correctness and
                     performance.</p>
             </li>
@@ -120,7 +119,8 @@
                 <ul class="job-description">
                     <li>Learned how to affect change within a corporate software organization.</li>
                     <li>Beat truth out of a large legacy Rails system</li>
-                    <li>Led learning sessions on how to fix flapping tests in an effort to improve CI</li>
+                    <li>Used dark releases and A/B tests to ensure acuracy and compliance of new features.</li>
+                    <li>Led learning sessions on how to fix flapping tests in an effort to improve CI.</li>
                     <li>Gained exposure to industry standards and burgeoning paradigms and tooling.</li>
                 </ul>
             </li>
@@ -128,14 +128,14 @@
                 <h3>Mid 2019 - Late 2021, Beckway Group LLC - Senior Software Engineer</h3>
                 <ul class="job-description">
                     <li>Had sole responsibility developing a Rails API for a greenfield project management app</li>
-                    <li>Wrote over 1000 tests while using TDD </li>
-                    <li>Implemented Excel Import/Export for project management tasks</li>
+                    <li>Wrote over 1000 specs to guaranteed reliability and adaptability.</li>
+                    <li>Setup a one click CI/CD pipeline with CircleCI and Heroku.</li>
+                    <li style="display: none;">Implemented Excel Import/Export for project management tasks</li>
                     <li>Designed PostgreSQL database featuring a "closure table" to model heirarchical data.</li>
                     <li>Automated production database backups and a database sync for the staging environment.</li>
                     <li>Attached vendor services: s3, Sendgrid, "Pact" Contract Testing, HoneyComb for observability &
                         monitoring.
                     </li>
-                    <li>Setup a one click CI/CD pipeline with CircleCI and Heroku.</li>
                 </ul>
             </li>
             <li>
@@ -150,6 +150,7 @@
                     <li>
                         Contributed the QueryBuilder to <a href="https://github.com/launchbadge/sqlx">SQLx</a>, my first
                         production Rust commit.
+                        <!-- downloaded 837371 times since -->
                     </li>
                 </ul>
             </li>
@@ -163,9 +164,11 @@
                     <li>Multiply my impact by sharing my knowledge with other passionate developers.</li>
                 </ul>
             </li>
+            <li>
+                <h3>References</h3>
+                <p>Available upon request.</p>
+            </li>
         </ul>
-        <h2>References</h2>
-        <p>Available upon request.</p>
     </div>
 </body>
 

@@ -1,6 +1,6 @@
 use web_sys::{Document, Element};
 
-use crate::{event_helper::*, todo::Todo, handlers::*};
+use crate::{event_helper::*, handlers::*, todo::Todo};
 
 pub struct App {
     pub input: Element, //owned for now?...
@@ -14,8 +14,9 @@ impl App {
     }
 
     pub fn bind_add_todo_handler(&self, dom: &Document) {
-        add_event_listener(&self.input, "keyup", add_todo_handler())
+        add_event_listener(&self.input, "keyup", create_todo_handler(self))
     }
+    
 
     pub fn init(&self, dom: Document) {
         self.bind_add_todo_handler(&dom);
@@ -27,7 +28,7 @@ impl App {
         let todo = Todo {
             title: "Brush the dog :)".to_string(),
             completed: false,
-            id: 1,
+            id: 0,
         };
 
         // someone remind me to handle unwraps every now and then! lol gross

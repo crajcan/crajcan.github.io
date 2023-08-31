@@ -1,3 +1,4 @@
 [submodule "rust_jobs"]
 	path = rust_jobs
-	url = git@github.com:crajcan/rust_jobs.git
+	# url = git@github.com:crajcan/rust_jobs.git
+	url = https://github.com/crajcan/rust_jobs.git

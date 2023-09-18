@@ -1,0 +1,21 @@
+cache_max_map_size: 10000000000
+version: 1
+app_name: ny-taxi-sample
+connections:
+  - config: !Postgres
+      user: postgres
+      host: db.iniepalupghmmajzivqu.supabase.co
+      port: 5432
+      database: rust_jobs
+      password: <pg_password>
+    name: pg
+
+sources:
+  - name: companies
+    table_name: companies
+    connection: pg
+
+endpoints:
+  - name: companies
+    path: /companies
+    table_name: companies

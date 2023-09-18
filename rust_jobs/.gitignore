@@ -1,0 +1,23 @@
+/api/data/*
+/api/.dozer
+/api/.supabase_password
+/dozer-tutorial/data
+/database/env.txt
+/database/env2.txt
+/database/neondb.sh
+/database/flydb.sh
+/database/.supabase_access
+/database/.supabase_password
+/database/supabasedb.sh
+/database/dump.sql
+
+# Added by cargo
+
+/target
+
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target

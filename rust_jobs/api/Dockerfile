@@ -1,0 +1,21 @@
+FROM debian:bookworm
+
+RUN apt-get -y update \
+  && apt-get clean \
+  && apt-get -y install \
+    curl \
+    unzip \
+    dpkg
+
+RUN mkdir -p /usr/src/rust_jobs_api
+
+WORKDIR /usr/src/rust_jobs_api
+
+COPY . /usr/src/rust_jobs_api
+
+ENV PATH=$PATH:/root/.local/bin
+RUN ./build.sh
+
+RUN dozer --version
+
+CMD dozer run --ignore-pipe

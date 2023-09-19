@@ -1,2 +1,3 @@
 [build]
 target = "target.html"
+public_url = "/rust_jobs/dist/"

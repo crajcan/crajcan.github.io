@@ -1,3 +1,5 @@
+/target
+/dev_artifacts
 /api/data/*
 /api/.dozer
 /api/.supabase_password
@@ -10,14 +12,3 @@
 /database/.supabase_password
 /database/supabasedb.sh
 /database/dump.sql
-
-# Added by cargo
-
-/target
-
-
-# Added by cargo
-#
-# already existing elements were commented out
-
-#/target

@@ -10,7 +10,6 @@
 /database/.supabase_password
 /database/supabasedb.sh
 /database/dump.sql
-/dist/
 
 # Added by cargo
 

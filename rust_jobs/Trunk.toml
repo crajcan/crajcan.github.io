@@ -1,4 +1,4 @@
 [build]
 target = "target.html"
-dist = "docs"
-public_url = "/rust_jobs/docs/"
+dist = "dist"
+public_url = "/rust_jobs/dist/"

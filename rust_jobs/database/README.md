@@ -1,8 +1,10 @@
-### Connect to fly postgres instance: 
+### Connect to supabase postgres instance: 
 
 ```
-flyctl postgress connect -a rust-jobs
+psql -h db.iniepalupghmmajzivqu.supabase.co -p 5432 -d postgres -U postgres
 ```
+
+and enter the password from  ../api/.supabase_password
 
 ### Clearing walsenders from database: 
 

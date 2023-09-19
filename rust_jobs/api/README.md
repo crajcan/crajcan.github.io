@@ -13,6 +13,7 @@ curl -X POST  https://rust-jobs-api.fly.dev/companies/query \
 https://fly.io/apps/rust-jobs-api
 ```
 
+
 ## Production Deployment (render.com [on hold])
 
 Deployed via Github to render.com app "rust_jobs_api"
@@ -49,4 +50,3 @@ curl -X POST  localhost:8080/companies/query \
 ```
 dozer run --config-path ./dozer-config.yaml
 ```
-

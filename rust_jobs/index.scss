@@ -1,35 +1,20 @@
-html,
 body {
-    height: 100%;
-    margin: 0;
+    font: 16px Roboto, sans-serif;
 }
 
-body {
-    align-items: center;
+.h1-section {
     display: flex;
     justify-content: center;
-
-    background: linear-gradient(to bottom right, #444444, #009a5b);
-    font-size: 1.5rem;
 }
 
-main {
-    color: #fff6d5;
-    font-family: sans-serif;
-    text-align: center;
+.subtitle-section {
+    margin-bottom: 30px;
 }
 
-.logo {
-    height: 20em;
-}
-
-.heart:after {
-    content: "❤️";
-
-    font-size: 1.75em;
-}
-
-h1+.subtitle {
-    display: block;
-    margin-top: -1em;
+.subtitle-section h2 {
+    text-align: left;
+    font-size: 18px;
+    padding: 0 10%;
+    color: #676767;
+    margin: 0;
 }

@@ -7,7 +7,7 @@ use app::App;
 
 fn main() {
     let document = gloo::utils::document();
-    let body = document.query_selector("body").unwrap().unwrap();
+    let body = document.query_selector(".main").unwrap().unwrap();
 
     let yew_mount = document.create_element("div").unwrap();
     let classes = yew_mount.class_list();

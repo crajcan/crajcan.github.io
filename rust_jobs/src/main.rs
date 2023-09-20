@@ -1,4 +1,7 @@
 mod app;
+mod video;
+mod video_details;
+mod videos_list;
 
 use app::App;
 

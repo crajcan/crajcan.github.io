@@ -1,57 +1,7 @@
 use yew::prelude::*;
-
-#[derive(Clone, PartialEq)]
-struct Video {
-    id: usize,
-    title: String,
-    speaker: String,
-    url: String,
-}
-
-#[derive(Properties, PartialEq)]
-struct VideosListProps {
-    videos: Vec<Video>,
-    on_click: Callback<Video>
-}
-
-#[function_component(VideosList)]
-fn videos_list(VideosListProps{ videos, on_click }: &VideosListProps) -> Html {
-     //clone on_click because it gets passed to every VideosList
-    let on_click = on_click.clone();
-
-    videos.iter().map(|video| {
-
-        // build a CallBack to bind to the html element 
-        let on_video_select = {
-            let on_click = on_click.clone();
-            let video = video.clone();
-
-            Callback::from(move |_| {
-                on_click.emit(video.clone())
-            })
-        }; 
-
-        html! {
-            // bind the Callback to the html element
-            <p key={video.id} onclick={on_video_select}>{format!("{}: {}", video.speaker, video.title)}</p>
-        }
-    }).collect()
-}
-
-#[derive(Properties, PartialEq)]
-struct VideosDetailsProps {
-    video: Video,
-}
-
-#[function_component(VideoDetails)]
-fn video_details(VideosDetailsProps { video }: &VideosDetailsProps) -> Html {
-    html! {
-        <div>
-            <h3>{ video.title.clone() }</h3>
-            <img src="https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder" alt="video thumbnail" />
-        </div>
-    }
-}
+use crate::video::Video;
+use crate::video_details::VideoDetails;
+use crate::videos_list::VideosList;
 
 #[function_component(App)]
 pub fn app() -> Html {

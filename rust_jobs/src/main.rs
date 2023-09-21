@@ -1,7 +1,4 @@
 mod app;
-mod video;
-mod video_details;
-mod videos_list;
 mod company;
 mod company_details;
 mod company_list;

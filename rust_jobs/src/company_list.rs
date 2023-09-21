@@ -9,7 +9,7 @@ pub(crate) struct CompanyListProps {
 
 #[function_component(CompanyList)]
 pub(crate) fn company_list(CompanyListProps{ companies, on_click }: &CompanyListProps) -> Html {
-     //clone on_click because it gets passed to every CompanyList
+    //clone on_click because it gets passed to every CompanyList
     let on_click = on_click.clone();
 
     companies.iter().map(|company| {
@@ -22,11 +22,11 @@ pub(crate) fn company_list(CompanyListProps{ companies, on_click }: &CompanyList
             Callback::from(move |_| {
                 on_click.emit(company.clone())
             })
-        }; 
+        };
 
         html! {
             // bind the Callback to the html element
-            <p key={company.id} onclick={on_company_select}>{format!("{}: {}", company.name, company.space)}</p>
+            <p class="company" key={company.id} onclick={on_company_select}>{format!("{}: {}", company.name, company.space)}</p>
         }
     }).collect()
 }

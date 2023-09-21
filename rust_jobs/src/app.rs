@@ -44,9 +44,17 @@ pub fn app() -> Html {
     html! {
         <>
             <div class="table-header-section">
-              <h2 class="table-header">{ "The Companies" }</h2>
+              <span>
+                <h2 class="table-topic jobs-button">{ "The Jobs" }</h2>
+              </span>
+              <span>
+                <h2 class="table-topic companies-button">{ "The Companies" }</h2>
+              </span>
             </div>
-            <CompanyList companies={(*companies).clone()} on_click={on_company_select.clone()} />
+
+            <ul class="company-list">
+              <CompanyList companies={(*companies).clone()} on_click={on_company_select.clone()} />
+            </ul>
             { for company_details }
         </>
     }

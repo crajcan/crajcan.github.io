@@ -26,7 +26,7 @@ pub(crate) fn company_list(CompanyListProps{ companies, on_click }: &CompanyList
 
         html! {
             // bind the Callback to the html element
-            <p class="company" key={company.id} onclick={on_company_select}>{format!("{}: {}", company.name, company.space)}</p>
+            <li class="company" key={company.id} onclick={on_company_select}>{format!("{}: {}", company.name, company.space)}</li>
         }
     }).collect()
 }

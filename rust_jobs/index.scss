@@ -32,6 +32,10 @@ body {
     margin: 0;
 }
 
+.data {
+    border: 1px solid black;
+}
+
 @media screen and (max-width: 768px) {
     .subtitle-section h2 {
         text-align: left;

@@ -71,12 +71,13 @@ body {
 }
 
 .company td:first-of-type {
-    padding-left: 15px;
+    padding-left: 10px;
+    padding-right: 5px;
 }
 
 .company td:last-of-type {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .company-name {
@@ -109,6 +110,11 @@ body {
 .company-startup:after {
     content: '✓';
     color: #00cc00;
+}
+
+.company-open-source.no-startup {
+    bottom: 5px;
+    position: relative;
 }
 
 @media screen and (min-width: 500px) {

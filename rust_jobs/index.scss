@@ -38,6 +38,9 @@ body {
 .jobs-button {
     float: left;
     padding-left: 15px;
+    color: #0000ee;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .companies-button {
@@ -46,50 +49,46 @@ body {
 }
 
 .company-list {
-    // stop from overflowing onto above section
     margin-left: auto;
     margin-right: auto;
     max-width: 900px;
+    // stop from overflowing onto above section
     clear: both;
     list-style-type: none;
-    padding-left: 0;
+    border-collapse: separate;
+    border-spacing: 0 5px;
 }
 
 .company {
     text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 15px;
-    padding-left: 15px;
-    border: 1px solid #e6e6e6;
     font-size: 20px;
 }
 
-// .table-header-section {
-// }
+.company td {
+    height: 90px;
+    padding: 0 15px;
+    background: #ccefff;
+}
 
-// .data {
-//     border: 1px solid black;
-// }
+.company-space {
+    font-size: 16px;
+}
 
-// .table-header-section h2 {
-//     border: 1px solid black;
-//     margin: 0;
-//     padding: 30px;
-//     font-size: 30px !important;
-// }
+@media screen and (min-width: 500px) {
+    .company-list td:first-of-type {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
 
-// .company {
-//     border: 1px solid black;
-//     margin: 0;
-//     padding: 16px;
-// }
+    .company-list td:last-of-type {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
-// @media screen and (max-width: 768px) {
-//     .subtitle-section h2 {
-//         text-align: left;
-//     }
-// }
+    .company-list {
+        border-spacing: 0 20px;
+    }
+}
 
 @media screen and (min-width: 800px) {
     .main {
@@ -97,12 +96,8 @@ body {
         text-align: center;
     }
 
-
     .subtitle-section h2 {
         text-align: center;
     }
 
-    //     .subtitle-section h2 {
-    //         font-size: 14px;
-    //     }
 }

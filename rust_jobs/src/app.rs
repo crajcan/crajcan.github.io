@@ -45,16 +45,16 @@ pub fn app() -> Html {
         <>
             <div class="table-header-section">
               <span>
-                <h2 class="table-topic jobs-button">{ "The Jobs" }</h2>
+                <h2 class="table-topic jobs-button">{ "The Jobs (WIP)" }</h2>
               </span>
               <span>
                 <h2 class="table-topic companies-button">{ "The Companies" }</h2>
               </span>
             </div>
 
-            <ul class="company-list">
+            <table class="company-list">
               <CompanyList companies={(*companies).clone()} on_click={on_company_select.clone()} />
-            </ul>
+            </table>
             { for company_details }
         </>
     }

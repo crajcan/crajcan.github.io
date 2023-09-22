@@ -26,10 +26,14 @@ pub(crate) fn company_list(CompanyListProps{ companies, on_click }: &CompanyList
 
         html! {
             // bind the Callback to the html element
-            <li class="company" key={company.id} onclick={on_company_select}>
-                <a href={company.url.clone().unwrap_or_default()}>{ company.name.clone() }</a>
-                {format!(": {}", company.space)}
-            </li>
+            <tr class="company" key={company.id} onclick={on_company_select}>
+                <td clase="company-name">
+                  <a href={company.url.clone().unwrap_or_default()}>{ company.name.clone() }</a>
+                </td>
+                <td class="company-space">
+                  { company.space.clone() }
+                </td>
+            </tr>
         }
     }).collect()
 }

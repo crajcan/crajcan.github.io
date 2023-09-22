@@ -749,7 +749,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('rust_jobs-b18b7a5c36a7f0db_bg.wasm', import.meta.url);
+        input = new URL('rust_jobs-e679a18f08c911_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 

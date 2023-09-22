@@ -20,7 +20,7 @@ body {
 }
 
 .subtitle-section h2 {
-    font-size: 18px;
+    font-size: 14px;
     color: #676767;
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 .table-topic {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .jobs-button {
@@ -61,32 +61,74 @@ body {
 
 .company {
     text-align: left;
-    font-size: 20px;
+    font-size: 16px;
+    padding: 0 15px;
 }
 
 .company td {
-    height: 90px;
-    padding: 0 15px;
+    height: 120px;
     background: #ccefff;
 }
 
-.company-space {
-    font-size: 16px;
+.company td:first-of-type {
+    padding-left: 15px;
+}
+
+.company td:last-of-type {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.company-name {
+    font-size: 20px;
+}
+
+.company-open-source {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-open-source-link {
+    display: inline-block;
+    padding: 0.2em;
+    margin: -0.2em;
+    position: relative;
+    top: 5px;
+}
+
+.company-startup {
+    height: 50%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-startup:after {
+    content: '✓';
+    color: #00cc00;
 }
 
 @media screen and (min-width: 500px) {
-    .company-list td:first-of-type {
+    .company td:first-of-type {
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
+        padding-right: 15px;
     }
 
-    .company-list td:last-of-type {
+    .company td:last-of-type {
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
     }
 
     .company-list {
         border-spacing: 0 20px;
+    }
+
+    .company-open-source-link {
+        top: 8px;
     }
 }
 
@@ -100,4 +142,8 @@ body {
         text-align: center;
     }
 
+    .company td {
+        height: 90px;
+        padding: 0 15px;
+    }
 }

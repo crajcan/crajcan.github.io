@@ -8,7 +8,6 @@ This is a monorepo for managing the database, api layer and yew frontend. The Ca
 - Make a spinner for when then yew app waits for the companies api to return
 - Make a spinner for when the browser waits for the wasm and js to arrive
 - Retry api requests when the api returns 0 companies
-- Make a github action to ping the api every N minutes to keep it awake
 - Put some jobs in the database
 - Create an endpoint in the dozer config for the jobs table
 - Add jobs to the app

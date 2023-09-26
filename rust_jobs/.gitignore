@@ -12,3 +12,4 @@
 /database/.supabase_password
 /database/supabasedb.sh
 /database/dump.sql
+/database/db_dump_9_26_2023.sql

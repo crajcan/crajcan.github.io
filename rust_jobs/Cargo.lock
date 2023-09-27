@@ -825,7 +825,9 @@ version = "0.1.0"
 dependencies = [
  "gloo 0.10.0",
  "gloo-net 0.2.6",
+ "gloo-timers 0.3.0",
  "serde",
+ "serde_json",
  "wasm-bindgen-futures",
  "web-sys",
  "yew",

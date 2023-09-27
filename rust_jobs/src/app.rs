@@ -5,8 +5,10 @@ use crate::company_details::CompanyDetails;
 use crate::company_list::CompanyList;
 
 use gloo_net::http::Request;
+use gloo_timers::callback::Timeout;
 
 const COMPANIES_URL: &str = "https://rust-jobs-api.fly.dev/companies/query";
+
 
 #[function_component(App)]
 pub fn app() -> Html {
@@ -14,16 +16,22 @@ pub fn app() -> Html {
     {
         let companies = companies.clone();
         use_effect_with_deps(move |_| {
-            let companies = companies.clone();
-            wasm_bindgen_futures::spawn_local(async move {
-                let fetched_companies: Vec<Company> = Request::post(COMPANIES_URL) .send()
-                    .await
-                    .unwrap()
-                    .json()
-                    .await
-                    .unwrap();
-                companies.set(fetched_companies);
+
+            let timeout = Timeout::new(2000, move || {
+                let companies = companies.clone();
+                wasm_bindgen_futures::spawn_local(async move {
+                    let fetched_companies: Vec<Company> = Request::post(COMPANIES_URL) .send()
+                        .await
+                        .unwrap()
+                        .json()
+                        .await
+                        .unwrap();
+                    companies.set(fetched_companies);
+                });
             });
+
+            timeout.forget();
+
             || ()
         }, ());
     }

@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use crate::company::Company;
+use gloo::console::log;
 
 #[derive(Properties, PartialEq)]
 pub(crate) struct CompanyListProps {
@@ -11,6 +12,8 @@ pub(crate) struct CompanyListProps {
 pub(crate) fn company_list(CompanyListProps{ companies, on_click }: &CompanyListProps) -> Html {
     //clone on_click because it gets passed to every CompanyList
     let on_click = on_click.clone();
+
+    log!("First company: {:#?}", serde_json::to_string_pretty(&companies.first()).unwrap());
 
     companies.iter().map(|company| {
 

@@ -1,4 +1,4 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 
 // {
 //     "id":1,
@@ -14,7 +14,7 @@ use serde::Deserialize;
 //     "__dozer_record_version":1
 // }
 
-#[derive(Clone, PartialEq, Deserialize)]
+#[derive(Clone, PartialEq, Serialize, Deserialize, Debug)]
 pub(crate) struct Company {
     pub id: usize,
     pub name: String,

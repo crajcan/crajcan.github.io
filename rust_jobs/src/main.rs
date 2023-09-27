@@ -1,7 +1,7 @@
-mod app;
 mod company;
 mod company_details;
 mod company_list;
+mod app;
 
 use app::App;
 

@@ -12,3 +12,4 @@ This is a monorepo for managing the database, api layer and yew frontend. The Ca
 - Create an endpoint in the dozer config for the jobs table
 - Add jobs to the app
 - Clean up Migrations and move db dump file into migrations folder
+- Move github svg to css

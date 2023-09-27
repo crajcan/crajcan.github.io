@@ -60,10 +60,14 @@ pub fn app() -> Html {
               </span>
             </div>
 
-            <table class="company-list">
-              <CompanyList companies={(*companies).clone()} on_click={on_company_select.clone()} />
-            </table>
-            { for company_details }
+            if companies.is_empty() {
+                <div class="loader companies-loader"></div>
+            } else {
+                <table class="company-list">
+                <CompanyList companies={(*companies).clone()} on_click={on_company_select.clone()} />
+                </table>
+                { for company_details }
+            }
         </>
     }
 }

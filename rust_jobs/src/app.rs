@@ -16,22 +16,16 @@ pub fn app() -> Html {
     {
         let companies = companies.clone();
         use_effect_with_deps(move |_| {
-
-            let timeout = Timeout::new(2000, move || {
-                let companies = companies.clone();
-                wasm_bindgen_futures::spawn_local(async move {
-                    let fetched_companies: Vec<Company> = Request::post(COMPANIES_URL) .send()
-                        .await
-                        .unwrap()
-                        .json()
-                        .await
-                        .unwrap();
-                    companies.set(fetched_companies);
-                });
+            let companies = companies.clone();
+            wasm_bindgen_futures::spawn_local(async move {
+                let fetched_companies: Vec<Company> = Request::post(COMPANIES_URL) .send()
+                    .await
+                    .unwrap()
+                    .json()
+                    .await
+                    .unwrap();
+                companies.set(fetched_companies);
             });
-
-            timeout.forget();
-
             || ()
         }, ());
     }
